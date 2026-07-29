@@ -1,6 +1,7 @@
 """
 秋招日报 - 配置
-只使用搜索列表页链接（无需登录即可查看岗位列表）
+所有链接已验证可直接打开（Boss直聘/前程无忧/应届生求职网）
+牛客网链接已移除（反爬拦截）
 """
 import os
 
@@ -13,205 +14,195 @@ EMAIL_CONFIG = {
 }
 
 # ============================================================
-# 精选岗位推荐
-# 告诉你搜什么、找哪家公司、注意什么
-# 链接是搜索页（无需登录即可浏览岗位列表）
+# 三条路线 × 已验证可打开的搜索链接
 # ============================================================
-FEATURED_JOBS = {
-    "high": {
-        "label": "🟢 70-90% 能拿到面试",
-        "desc": "学历/经验高度匹配，你的简历竞争力强",
-        "jobs": [
+TRACK_LINKS = {
+    "嵌入式/硬件工程师": {
+        "icon": "🔧",
+        "links": [
             {
-                "track": "嵌入式/硬件工程师",
-                "what": "硬件开发工程师 · PCB设计方向",
-                "where": "牛客网校招 → 搜索「硬件开发 PCB Altium」",
-                "why": "明确要求Altium Designer+PCB设计，专业完全对口",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=硬件开发&keyword=PCB&keyword=Altium",
+                "label": "Boss直聘 · 嵌入式应届",
+                "url": "https://www.zhipin.com/web/geek/job?query=嵌入式工程师%20硬件工程师&experience=401&degree=203&city=101280100",
+                "desc": "深圳 · 应届 · 本科 · 嵌入式/硬件岗",
             },
             {
-                "track": "嵌入式/硬件工程师",
-                "what": "硬件开发 · 广东地区",
-                "where": "牛客网校招 → 搜索「硬件开发」筛选广东",
-                "why": "硬件开发岗位，电子类专业优先，中小厂居多",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=硬件开发&keyword=电子工程师",
+                "label": "Boss直聘 · STM32单片机",
+                "url": "https://www.zhipin.com/web/geek/job?query=STM32%20单片机%20嵌入式&experience=401&degree=203",
+                "desc": "你的核心技能：STM32+单片机",
             },
             {
-                "track": "电商运营",
-                "what": "电商运营 · 广东地区",
-                "where": "牛客网校招 → 搜索「电商运营 平台运营 店铺运营」",
-                "why": "2段电商实习+全链路运营经验，直接就对口",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=电商运营&keyword=平台运营&keyword=店铺运营",
+                "label": "前程无忧 · 嵌入式校招",
+                "url": "https://we.51job.com/pc/search?keyword=嵌入式%20硬件工程师%20单片机&keywordType=3&workYear=01",
+                "desc": "51job校招频道，筛选应届生",
             },
             {
-                "track": "电商运营",
-                "what": "电商运营 · Boss直聘",
-                "where": "Boss直聘 → 搜「电商运营」→筛「应届生」→城市选深圳/广州/东莞",
-                "why": "Boss直聘中小厂多，直接和HR沟通，效率最高",
-                "search_url": "https://www.zhipin.com/web/geek/job?query=电商运营&experience=401&degree=203",
-            },
-            {
-                "track": "新媒体运营",
-                "what": "新媒体运营 · 全平台",
-                "where": "牛客网校招 → 搜索「新媒体运营 内容运营 短视频」",
-                "why": "公众号+小红书实操经验，有数据有案例，面试时能讲",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=新媒体运营&keyword=内容运营&keyword=短视频运营",
-            },
-            {
-                "track": "新媒体运营",
-                "what": "新媒体/内容运营 · Boss直聘",
-                "where": "Boss直聘 → 搜「新媒体运营」→筛「应届生」",
-                "why": "中小企业新媒体岗多，你的自媒体数据是差异化亮点",
-                "search_url": "https://www.zhipin.com/web/geek/job?query=新媒体运营%20内容运营&experience=401&degree=203",
+                "label": "应届生求职网 · 嵌入式",
+                "url": "https://q.yingjiesheng.com/jobs/search/?keyword=嵌入式",
+                "desc": "51job旗下校招平台",
             },
         ],
     },
-    "mid": {
-        "label": "🟡 40-60% 能拿到面试",
-        "desc": "学校不占优但实习/项目能加分，建议重点投",
-        "jobs": [
+    "电商运营": {
+        "icon": "🛒",
+        "links": [
             {
-                "track": "嵌入式/硬件工程师",
-                "what": "嵌入式软件开发 · STM32方向",
-                "where": "牛客网校招 → 搜索「嵌入式 STM32 单片机」",
-                "why": "你的核心技能就是STM32+C语言，课设项目面聊时能展示",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=嵌入式&keyword=STM32&keyword=单片机",
+                "label": "Boss直聘 · 电商运营应届",
+                "url": "https://www.zhipin.com/web/geek/job?query=电商运营%20平台运营%20店铺运营&experience=401&degree=203&city=101280100",
+                "desc": "深圳 · 应届 · 本科 · 电商运营",
             },
             {
-                "track": "嵌入式/硬件工程师",
-                "what": "嵌入式软件工程师 · 中型企业",
-                "where": "牛客网校招 → 搜索「嵌入式软件 C语言 Keil」",
-                "why": "C语言+Keil开发经验是硬通货，中小厂更看重动手能力",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=嵌入式软件&keyword=C语言",
+                "label": "Boss直聘 · 电商中小厂",
+                "url": "https://www.zhipin.com/web/geek/job?query=电商运营%20网店运营&experience=401&degree=203&scale=302,303",
+                "desc": "20-499人中小厂（你的主战场）",
             },
             {
-                "track": "嵌入式/硬件工程师",
-                "what": "硬件技术工程师",
-                "where": "牛客网校招 → 搜索「硬件技术 电子工程师」",
-                "why": "电子类专业对口岗，原理图/PCB经验加分",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=硬件技术&keyword=电子工程师",
+                "label": "前程无忧 · 电商运营校招",
+                "url": "https://we.51job.com/pc/search?keyword=电商运营%20平台运营%20店铺运营&keywordType=3&workYear=01",
+                "desc": "51job校招频道",
             },
             {
-                "track": "嵌入式/硬件工程师",
-                "what": "嵌入式实习（可转正）",
-                "where": "牛客网实习 → 搜索「嵌入式 硬件」",
-                "why": "实习门槛低于校招，表现好直接转正",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=2&keyword=嵌入式&keyword=STM32",
-            },
-            {
-                "track": "电商运营",
-                "what": "平台运营/品类运营",
-                "where": "牛客网校招 → 搜索「平台运营 品类运营 商家运营」",
-                "why": "你的1688+淘宝双平台经验是稀缺的，很多应届生没有",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=平台运营&keyword=品类运营&keyword=商家运营",
-            },
-            {
-                "track": "电商运营",
-                "what": "电商运营 · 中小厂/品牌方",
-                "where": "Boss直聘 → 搜「电商运营」→ 筛20-499人规模",
-                "why": "中小品牌方电商部，对你来说是最容易进的",
-                "search_url": "https://www.zhipin.com/web/geek/job?query=电商运营&experience=401&degree=203&scale=302,303",
-            },
-            {
-                "track": "电商运营",
-                "what": "产品运营 · 互联网公司",
-                "where": "牛客网校招 → 搜索「产品运营 用户运营」",
-                "why": "你的数据分析思维+运营实操经验可以迁移到产品运营",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=产品运营&keyword=用户运营",
-            },
-            {
-                "track": "新媒体运营",
-                "what": "市场管培生 · KOL/短视频方向",
-                "where": "牛客网校招 → 搜索「KOL运营 达人运营 内容营销」",
-                "why": "含短视频达人投放+内容策略，你的自媒体实操直接对口",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=KOL运营&keyword=内容营销&keyword=短视频",
-            },
-            {
-                "track": "新媒体运营",
-                "what": "视频创意/短视频制作",
-                "where": "牛客网校招 → 搜索「视频创意 短视频制作 剪辑」",
-                "why": "你有短视频全流程经验，从脚本到剪辑到投放都做过",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=视频创意&keyword=短视频&keyword=新媒体",
-            },
-            {
-                "track": "新媒体运营",
-                "what": "新媒体运营 · 小红书/公众号方向",
-                "where": "Boss直聘 → 搜「小红书运营」或「公众号运营」→ 应届生",
-                "why": "你的小红书+公众号数据可以直接当作品集展示",
-                "search_url": "https://www.zhipin.com/web/geek/job?query=小红书运营%20公众号运营&experience=401",
+                "label": "应届生求职网 · 电商运营",
+                "url": "https://q.yingjiesheng.com/jobs/search/?keyword=电商运营",
+                "desc": "51job旗下校招平台",
             },
         ],
     },
-    "low": {
-        "label": "🔵 10-30% 能拿到面试",
-        "desc": "大厂/学历门槛高，但投了不亏，万一呢",
-        "jobs": [
+    "新媒体运营": {
+        "icon": "📱",
+        "links": [
             {
-                "track": "嵌入式/硬件工程师",
-                "what": "华为 · 硬件/嵌入式岗",
-                "where": "牛客网校招 → 搜索「硬件」→ 筛选「华为」",
-                "why": "东莞松山湖，电子信息工程对口，薪资16-40K",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=硬件技术&keyword=嵌入式&company=华为",
+                "label": "Boss直聘 · 新媒体应届",
+                "url": "https://www.zhipin.com/web/geek/job?query=新媒体运营%20内容运营%20短视频&experience=401&degree=203",
+                "desc": "应届 · 本科 · 新媒体/内容/短视频",
             },
             {
-                "track": "嵌入式/硬件工程师",
-                "what": "大厂通用软件开发/嵌入式",
-                "where": "牛客网校招 → 搜索「通用软件 嵌入式 校招」",
-                "why": "BSP驱动/嵌入式系统方向，提前批可能降低学历门槛",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=通用软件&keyword=嵌入式",
+                "label": "Boss直聘 · 小红书/公众号",
+                "url": "https://www.zhipin.com/web/geek/job?query=小红书运营%20公众号运营%20短视频运营&experience=401&degree=203",
+                "desc": "你的自媒体经验直接对口",
             },
             {
-                "track": "电商运营",
-                "what": "京东/拼多多 · 电商运营/采销",
-                "where": "牛客网校招 → 搜索「京东 拼多多 电商」",
-                "why": "大厂电商核心岗，你的实习经验能拿来硬刚",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=电商&company=京东",
+                "label": "前程无忧 · 新媒体校招",
+                "url": "https://we.51job.com/pc/search?keyword=新媒体运营%20内容运营%20短视频&keywordType=3&workYear=01",
+                "desc": "51job校招频道",
             },
             {
-                "track": "新媒体运营",
-                "what": "小米/大厂 · 运营岗",
-                "where": "牛客网校招 → 搜索「产品运营」→ 筛选大厂",
-                "why": "内容运营/用户运营方向，深圳有岗",
-                "search_url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=产品运营&keyword=内容运营",
+                "label": "应届生求职网 · 新媒体",
+                "url": "https://q.yingjiesheng.com/jobs/search/?keyword=新媒体运营",
+                "desc": "51job旗下校招平台",
             },
         ],
     },
 }
 
 # ============================================================
-# 快捷搜索入口（6个核心搜索链接）
+# 每日精选搜索推荐
 # ============================================================
-QUICK_SEARCHES = [
+DAILY_PICKS = [
+    # 🟢 70-90%
     {
-        "label": "嵌入式/硬件校招",
-        "url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=嵌入式&keyword=硬件工程师&keyword=STM32&keyword=单片机",
+        "tier": "high",
+        "label": "🟢 70-90% 能拿到面试",
+        "picks": [
+            {
+                "track": "嵌入式/硬件工程师",
+                "what": "Boss直聘 → 搜「硬件开发 PCB Altium」→ 城市选深圳/东莞",
+                "why": "你的AD+PCB技能是直接卖点",
+                "url": "https://www.zhipin.com/web/geek/job?query=硬件开发%20PCB%20Altium&experience=401&degree=203",
+            },
+            {
+                "track": "电商运营",
+                "what": "Boss直聘 → 搜「电商运营 1688 淘宝」→ 筛20-499人",
+                "why": "1688/淘宝双平台经验，中小厂最认这个",
+                "url": "https://www.zhipin.com/web/geek/job?query=电商运营%201688%20淘宝&experience=401&degree=203&scale=302,303",
+            },
+            {
+                "track": "新媒体运营",
+                "what": "Boss直聘 → 搜「新媒体运营 小红书」→ 应届生",
+                "why": "小红书5W+阅读数据就是最好的简历",
+                "url": "https://www.zhipin.com/web/geek/job?query=新媒体运营%20小红书&experience=401&degree=203",
+            },
+        ],
     },
+    # 🟡 40-60%
     {
-        "label": "嵌入式/硬件实习",
-        "url": "https://www.nowcoder.com/jobs/school/search?recruitType=2&keyword=嵌入式&keyword=硬件工程师&keyword=STM32",
+        "tier": "mid",
+        "label": "🟡 40-60% 能拿到面试",
+        "picks": [
+            {
+                "track": "嵌入式/硬件工程师",
+                "what": "Boss直聘 → 搜「嵌入式 STM32 Keil」→ 应届生",
+                "why": "STM32+Keil是你课设的核心技术栈",
+                "url": "https://www.zhipin.com/web/geek/job?query=嵌入式%20STM32%20Keil&experience=401&degree=203",
+            },
+            {
+                "track": "嵌入式/硬件工程师",
+                "what": "前程无忧 → 搜「嵌入式 电子工程师」→ 校招频道",
+                "why": "传统企业电子岗，学历门槛比互联网低",
+                "url": "https://we.51job.com/pc/search?keyword=嵌入式%20电子工程师&keywordType=3&workYear=01",
+            },
+            {
+                "track": "嵌入式/硬件工程师",
+                "what": "应届生求职网 → 搜「硬件工程师」",
+                "why": "校招专属平台，竞争比Boss直聘小",
+                "url": "https://q.yingjiesheng.com/jobs/search/?keyword=硬件工程师",
+            },
+            {
+                "track": "电商运营",
+                "what": "Boss直聘 → 搜「平台运营 品类运营 商家运营」",
+                "why": "你的全链路运营经验，比纯内容运营有优势",
+                "url": "https://www.zhipin.com/web/geek/job?query=平台运营%20品类运营%20商家运营&experience=401&degree=203",
+            },
+            {
+                "track": "电商运营",
+                "what": "前程无忧 → 搜「电商运营 淘宝 天猫」→ 校招",
+                "why": "品牌方电商部，稳定且培养体系完善",
+                "url": "https://we.51job.com/pc/search?keyword=电商运营%20淘宝%20天猫&keywordType=3&workYear=01",
+            },
+            {
+                "track": "新媒体运营",
+                "what": "Boss直聘 → 搜「短视频运营 剪辑」→ 应届生",
+                "why": "你从脚本到剪辑到投放全流程都做过",
+                "url": "https://www.zhipin.com/web/geek/job?query=短视频运营%20剪辑&experience=401&degree=203",
+            },
+            {
+                "track": "新媒体运营",
+                "what": "前程无忧 → 搜「内容运营 新媒体」→ 校招",
+                "why": "公众号2200粉+小红书5W+阅读，有硬数据",
+                "url": "https://we.51job.com/pc/search?keyword=内容运营%20新媒体&keywordType=3&workYear=01",
+            },
+        ],
     },
+    # 🔵 10-30%
     {
-        "label": "电商运营校招",
-        "url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=电商运营&keyword=平台运营&keyword=店铺运营",
-    },
-    {
-        "label": "电商运营实习",
-        "url": "https://www.nowcoder.com/jobs/school/search?recruitType=2&keyword=电商运营&keyword=平台运营",
-    },
-    {
-        "label": "新媒体/内容校招",
-        "url": "https://www.nowcoder.com/jobs/school/search?recruitType=1&keyword=新媒体运营&keyword=内容运营&keyword=短视频运营",
-    },
-    {
-        "label": "新媒体/内容实习",
-        "url": "https://www.nowcoder.com/jobs/school/search?recruitType=2&keyword=新媒体运营&keyword=内容运营",
+        "tier": "low",
+        "label": "🔵 10-30% 能拿到面试",
+        "picks": [
+            {
+                "track": "嵌入式/硬件工程师",
+                "what": "Boss直聘 → 搜「华为 嵌入式」或「大疆 硬件」",
+                "why": "大厂校招，专业对口就投，万一简历过了呢",
+                "url": "https://www.zhipin.com/web/geek/job?query=嵌入式&experience=401&degree=203&city=101280100",
+            },
+            {
+                "track": "电商运营",
+                "what": "Boss直聘 → 搜「电商运营」→ 城市选广州/杭州/成都",
+                "why": "多城市撒网，SHEIN/唯品会等大厂在广深有岗",
+                "url": "https://www.zhipin.com/web/geek/job?query=电商运营&experience=401&degree=203&city=101280100",
+            },
+            {
+                "track": "新媒体运营",
+                "what": "Boss直聘 → 搜「内容运营」→ 筛大厂/千人以上",
+                "why": "作品集过关的话，学校的影响会被弱化",
+                "url": "https://www.zhipin.com/web/geek/job?query=内容运营&experience=401&degree=203&scale=305,306",
+            },
+        ],
     },
 ]
 
 KEY_DATES = [
     {"date": "8月中旬", "event": "大厂秋招正式批大规模启动"},
     {"date": "8月下旬-9月", "event": "网申高峰，每天投10-15家（电商4:新媒体3:嵌入式3）"},
-    {"date": "9月中旬-10月", "event": "笔试+面试密集期"},
+    {"date": "9月中旬-10月", "event": "笔试+面试密集期，提前刷面经"},
     {"date": "10月下旬", "event": "谈薪+签Offer高峰期"},
     {"date": "11-12月", "event": "补录捡漏+春招提前关注"},
 ]
