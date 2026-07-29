@@ -58,7 +58,13 @@ def build_report():
         <b style="font-size:14px;">{job['title']}</b><br>
         <span style="color:#555;">🏢 {job['company']} · 📍{job['location']} · 📋{job['type']}</span><br>
         <span style="color:#666;font-size:12px;">💡 {job['why']}</span><br>
-        <a href="{job['url']}" style="display:inline-block;margin-top:6px;padding:4px 18px;background:#4E7282;color:#fff;text-decoration:none;border-radius:4px;font-size:12px;font-weight:bold;">📮 投递这个岗位</a>
+        <span style="color:#e74c3c;font-size:11px;">⏰ 截止日期：点击下方按钮进入岗位页查看（每岗不同，建议立即投递）</span><br>
+        <a href="{job['url']}" style="display:inline-block;margin-top:4px;padding:4px 18px;background:#4E7282;color:#fff;text-decoration:none;border-radius:4px;font-size:12px;font-weight:bold;">📮 投递这个岗位</a>
+      </div>"""
+        if job_count == 0:
+            html += """
+      <div style="margin:4px 0 4px 8px;padding:10px 14px;font-size:12px;color:#999;background:#fafafa;border-radius:4px;">
+        暂无合适岗位，待秋招正式批启动后补充
       </div>"""
         html += "</div>\n"
 

@@ -107,17 +107,7 @@ FEATURED_JOBS = {
     "low": {
         "label": "🔵 10-30% 能拿到面试",
         "desc": "大厂/学历门槛高，投了不亏",
-        "jobs": [
-            {
-                "track": "嵌入式/硬件工程师",
-                "title": "硬件开发 / PCB设计 / 嵌入式软件开发",
-                "company": "比亚迪",
-                "location": "深圳（主）/ 上海/重庆/西安",
-                "type": "2027届校招",
-                "why": "大厂，硬件方向全覆盖，PCB+嵌入式都是你的技能点",
-                "url": "https://cumt.ncss.cn/student/jobs/4dy2cSjCCAnFcDfyPqi5vZ/detail.html",
-            },
-        ],
+        "jobs": [],  # 暂无合适的冲刺岗，待秋招正式批开启后补充
     },
 }
 
