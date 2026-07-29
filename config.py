@@ -1,7 +1,7 @@
 """
 秋招日报 - 配置
-所有链接已验证可直接打开（Boss直聘/前程无忧/应届生求职网）
-牛客网链接已移除（反爬拦截）
+所有岗位链接来自 ncss.cn（国家大学生就业服务平台）
+已验证：无需登录，点击直达岗位详情页
 """
 import os
 
@@ -14,195 +14,139 @@ EMAIL_CONFIG = {
 }
 
 # ============================================================
-# 三条路线 × 已验证可打开的搜索链接
+# 精选岗位 - 全部来自 ncss.cn，点击直达岗位详情
 # ============================================================
-TRACK_LINKS = {
-    "嵌入式/硬件工程师": {
-        "icon": "🔧",
-        "links": [
+FEATURED_JOBS = {
+    # 🟢 70-90%
+    "high": {
+        "label": "🟢 70-90% 能拿到面试",
+        "desc": "中小厂/学历匹配/经验对口",
+        "jobs": [
             {
-                "label": "Boss直聘 · 嵌入式应届",
-                "url": "https://www.zhipin.com/web/geek/job?query=嵌入式工程师%20硬件工程师&experience=401&degree=203&city=101280100",
-                "desc": "深圳 · 应届 · 本科 · 嵌入式/硬件岗",
+                "track": "嵌入式/硬件工程师",
+                "title": "嵌入式软件工程师 / 电力电子硬件工程师",
+                "company": "深圳市正浩创新科技",
+                "location": "深圳南山",
+                "type": "2027届研发提前批",
+                "why": "深圳中小厂，电子/嵌入式专业直接对口，Altium Designer+PCB经验是加分项",
+                "url": "https://guet.ncss.cn/student/jobs/Nhn3AZULWjDEhWfCG9Qg2v/detail.html",
             },
             {
-                "label": "Boss直聘 · STM32单片机",
-                "url": "https://www.zhipin.com/web/geek/job?query=STM32%20单片机%20嵌入式&experience=401&degree=203",
-                "desc": "你的核心技能：STM32+单片机",
+                "track": "嵌入式/硬件工程师",
+                "title": "嵌入式硬件工程师 / 嵌入式软件工程师",
+                "company": "宇树科技",
+                "location": "杭州",
+                "type": "2027届校招",
+                "why": "中小厂，嵌入式软硬件方向明确，你的STM32+Keil技能直接匹配",
+                "url": "https://fg.ncss.cn/student/jobs/6JsdAwQiZpBp4iLcXErRFh/detail.html",
             },
             {
-                "label": "前程无忧 · 嵌入式校招",
-                "url": "https://we.51job.com/pc/search?keyword=嵌入式%20硬件工程师%20单片机&keywordType=3&workYear=01",
-                "desc": "51job校招频道，筛选应届生",
-            },
-            {
-                "label": "应届生求职网 · 嵌入式",
-                "url": "https://q.yingjiesheng.com/jobs/search/?keyword=嵌入式",
-                "desc": "51job旗下校招平台",
-            },
-        ],
-    },
-    "电商运营": {
-        "icon": "🛒",
-        "links": [
-            {
-                "label": "Boss直聘 · 电商运营应届",
-                "url": "https://www.zhipin.com/web/geek/job?query=电商运营%20平台运营%20店铺运营&experience=401&degree=203&city=101280100",
-                "desc": "深圳 · 应届 · 本科 · 电商运营",
-            },
-            {
-                "label": "Boss直聘 · 电商中小厂",
-                "url": "https://www.zhipin.com/web/geek/job?query=电商运营%20网店运营&experience=401&degree=203&scale=302,303",
-                "desc": "20-499人中小厂（你的主战场）",
-            },
-            {
-                "label": "前程无忧 · 电商运营校招",
-                "url": "https://we.51job.com/pc/search?keyword=电商运营%20平台运营%20店铺运营&keywordType=3&workYear=01",
-                "desc": "51job校招频道",
-            },
-            {
-                "label": "应届生求职网 · 电商运营",
-                "url": "https://q.yingjiesheng.com/jobs/search/?keyword=电商运营",
-                "desc": "51job旗下校招平台",
+                "track": "电商运营",
+                "title": "电商运营储干",
+                "company": "蓝禾技术（行业头部品牌）",
+                "location": "深圳龙华",
+                "type": "校招",
+                "why": "淘宝/天猫运营方向，接受应届生，你的2段电商实习直接对口",
+                "url": "https://j.ncss.cn/student/jobs/Jb22Z6DSg9BCRXLEDSdVJ/detail.html",
             },
         ],
     },
-    "新媒体运营": {
-        "icon": "📱",
-        "links": [
+    # 🟡 40-60% 主战场
+    "mid": {
+        "label": "🟡 40-60% 能拿到面试",
+        "desc": "学校不占优但经验能加分，重点投",
+        "jobs": [
             {
-                "label": "Boss直聘 · 新媒体应届",
-                "url": "https://www.zhipin.com/web/geek/job?query=新媒体运营%20内容运营%20短视频&experience=401&degree=203",
-                "desc": "应届 · 本科 · 新媒体/内容/短视频",
+                "track": "嵌入式/硬件工程师",
+                "title": "嵌入式软件工程师 / GPU软件开发",
+                "company": "芯动科技",
+                "location": "武汉",
+                "type": "2027届提前批",
+                "why": "嵌入式软件+GPU方向，C语言是核心要求，你的专业对口",
+                "url": "https://hust.ncss.cn/student/jobs/M5VjH1mxGnMLmg4ZfdRwZP/detail.html",
             },
             {
-                "label": "Boss直聘 · 小红书/公众号",
-                "url": "https://www.zhipin.com/web/geek/job?query=小红书运营%20公众号运营%20短视频运营&experience=401&degree=203",
-                "desc": "你的自媒体经验直接对口",
+                "track": "嵌入式/硬件工程师",
+                "title": "暑期实习生（芯片/硬件/智能机器人）",
+                "company": "小鹏集团",
+                "location": "广州/深圳",
+                "type": "2027届暑期实习（可转正）",
+                "why": "实习门槛低于校招，表现好直接转正，广州深圳都有岗",
+                "url": "https://3120ww.ncss.cn/student/m/jobs/KNiqQo5vuXpynyTGvurVQX/detail.html",
             },
             {
-                "label": "前程无忧 · 新媒体校招",
-                "url": "https://we.51job.com/pc/search?keyword=新媒体运营%20内容运营%20短视频&keywordType=3&workYear=01",
-                "desc": "51job校招频道",
+                "track": "嵌入式/硬件工程师",
+                "title": "校招实习（硬件/嵌入式/AI方向）",
+                "company": "千寻智能",
+                "location": "全国",
+                "type": "2027届校招实习",
+                "why": "硬件+嵌入式+AI多方向，你的课设项目可以展示动手能力",
+                "url": "https://llcy.ncss.cn/student/jobs/GbEBXYVE6vXNJS8Rwe8zUE/detail.html",
             },
             {
-                "label": "应届生求职网 · 新媒体",
-                "url": "https://q.yingjiesheng.com/jobs/search/?keyword=新媒体运营",
-                "desc": "51job旗下校招平台",
+                "track": "电商运营",
+                "title": "JDS-创新零售采销（电商运营方向）",
+                "company": "京东",
+                "location": "北京/深圳等多地",
+                "type": "校招",
+                "why": "电商运营大厂岗，1688/淘宝经验是差异化优势",
+                "url": "https://m.ncss.cn/student/m/jobs/GwhRTzF4pcsjkq3ti3GPcF/detail.html",
+            },
+            {
+                "track": "新媒体运营",
+                "title": "直播运营 / 短视频编导 / 活动新媒体运营",
+                "company": "好未来集团（学而思母公司）",
+                "location": "北京",
+                "type": "2027届暑期实习（有转正机会）",
+                "why": "含直播运营+短视频编导+电商运营多方向，你的自媒体经验加分",
+                "url": "https://vy.ncss.cn/student/jobs/QgTTqE4vna6Zuc6XBGve3s/detail.html",
+            },
+        ],
+    },
+    # 🔵 10-30%
+    "low": {
+        "label": "🔵 10-30% 能拿到面试",
+        "desc": "大厂/学历门槛高，投了不亏",
+        "jobs": [
+            {
+                "track": "嵌入式/硬件工程师",
+                "title": "硬件开发 / PCB设计 / 嵌入式软件开发",
+                "company": "比亚迪",
+                "location": "深圳（主）/ 上海/重庆/西安",
+                "type": "2027届校招",
+                "why": "大厂，硬件方向全覆盖，PCB+嵌入式都是你的技能点",
+                "url": "https://cumt.ncss.cn/student/jobs/4dy2cSjCCAnFcDfyPqi5vZ/detail.html",
             },
         ],
     },
 }
 
 # ============================================================
-# 每日精选搜索推荐
+# 快捷搜索入口
 # ============================================================
-DAILY_PICKS = [
-    # 🟢 70-90%
+QUICK_SEARCHES = [
     {
-        "tier": "high",
-        "label": "🟢 70-90% 能拿到面试",
-        "picks": [
-            {
-                "track": "嵌入式/硬件工程师",
-                "what": "Boss直聘 → 搜「硬件开发 PCB Altium」→ 城市选深圳/东莞",
-                "why": "你的AD+PCB技能是直接卖点",
-                "url": "https://www.zhipin.com/web/geek/job?query=硬件开发%20PCB%20Altium&experience=401&degree=203",
-            },
-            {
-                "track": "电商运营",
-                "what": "Boss直聘 → 搜「电商运营 1688 淘宝」→ 筛20-499人",
-                "why": "1688/淘宝双平台经验，中小厂最认这个",
-                "url": "https://www.zhipin.com/web/geek/job?query=电商运营%201688%20淘宝&experience=401&degree=203&scale=302,303",
-            },
-            {
-                "track": "新媒体运营",
-                "what": "Boss直聘 → 搜「新媒体运营 小红书」→ 应届生",
-                "why": "小红书5W+阅读数据就是最好的简历",
-                "url": "https://www.zhipin.com/web/geek/job?query=新媒体运营%20小红书&experience=401&degree=203",
-            },
-        ],
+        "label": "Boss直聘 · 嵌入式应届",
+        "url": "https://www.zhipin.com/web/geek/job?query=嵌入式工程师%20硬件工程师&experience=401&degree=203",
     },
-    # 🟡 40-60%
     {
-        "tier": "mid",
-        "label": "🟡 40-60% 能拿到面试",
-        "picks": [
-            {
-                "track": "嵌入式/硬件工程师",
-                "what": "Boss直聘 → 搜「嵌入式 STM32 Keil」→ 应届生",
-                "why": "STM32+Keil是你课设的核心技术栈",
-                "url": "https://www.zhipin.com/web/geek/job?query=嵌入式%20STM32%20Keil&experience=401&degree=203",
-            },
-            {
-                "track": "嵌入式/硬件工程师",
-                "what": "前程无忧 → 搜「嵌入式 电子工程师」→ 校招频道",
-                "why": "传统企业电子岗，学历门槛比互联网低",
-                "url": "https://we.51job.com/pc/search?keyword=嵌入式%20电子工程师&keywordType=3&workYear=01",
-            },
-            {
-                "track": "嵌入式/硬件工程师",
-                "what": "应届生求职网 → 搜「硬件工程师」",
-                "why": "校招专属平台，竞争比Boss直聘小",
-                "url": "https://q.yingjiesheng.com/jobs/search/?keyword=硬件工程师",
-            },
-            {
-                "track": "电商运营",
-                "what": "Boss直聘 → 搜「平台运营 品类运营 商家运营」",
-                "why": "你的全链路运营经验，比纯内容运营有优势",
-                "url": "https://www.zhipin.com/web/geek/job?query=平台运营%20品类运营%20商家运营&experience=401&degree=203",
-            },
-            {
-                "track": "电商运营",
-                "what": "前程无忧 → 搜「电商运营 淘宝 天猫」→ 校招",
-                "why": "品牌方电商部，稳定且培养体系完善",
-                "url": "https://we.51job.com/pc/search?keyword=电商运营%20淘宝%20天猫&keywordType=3&workYear=01",
-            },
-            {
-                "track": "新媒体运营",
-                "what": "Boss直聘 → 搜「短视频运营 剪辑」→ 应届生",
-                "why": "你从脚本到剪辑到投放全流程都做过",
-                "url": "https://www.zhipin.com/web/geek/job?query=短视频运营%20剪辑&experience=401&degree=203",
-            },
-            {
-                "track": "新媒体运营",
-                "what": "前程无忧 → 搜「内容运营 新媒体」→ 校招",
-                "why": "公众号2200粉+小红书5W+阅读，有硬数据",
-                "url": "https://we.51job.com/pc/search?keyword=内容运营%20新媒体&keywordType=3&workYear=01",
-            },
-        ],
+        "label": "Boss直聘 · 电商运营应届",
+        "url": "https://www.zhipin.com/web/geek/job?query=电商运营%20平台运营&experience=401&degree=203",
     },
-    # 🔵 10-30%
     {
-        "tier": "low",
-        "label": "🔵 10-30% 能拿到面试",
-        "picks": [
-            {
-                "track": "嵌入式/硬件工程师",
-                "what": "Boss直聘 → 搜「华为 嵌入式」或「大疆 硬件」",
-                "why": "大厂校招，专业对口就投，万一简历过了呢",
-                "url": "https://www.zhipin.com/web/geek/job?query=嵌入式&experience=401&degree=203&city=101280100",
-            },
-            {
-                "track": "电商运营",
-                "what": "Boss直聘 → 搜「电商运营」→ 城市选广州/杭州/成都",
-                "why": "多城市撒网，SHEIN/唯品会等大厂在广深有岗",
-                "url": "https://www.zhipin.com/web/geek/job?query=电商运营&experience=401&degree=203&city=101280100",
-            },
-            {
-                "track": "新媒体运营",
-                "what": "Boss直聘 → 搜「内容运营」→ 筛大厂/千人以上",
-                "why": "作品集过关的话，学校的影响会被弱化",
-                "url": "https://www.zhipin.com/web/geek/job?query=内容运营&experience=401&degree=203&scale=305,306",
-            },
-        ],
+        "label": "Boss直聘 · 新媒体应届",
+        "url": "https://www.zhipin.com/web/geek/job?query=新媒体运营%20内容运营&experience=401&degree=203",
+    },
+    {
+        "label": "国家就业平台 · 校招专区",
+        "url": "https://www.ncss.cn/student/jobs/index.html",
     },
 ]
 
 KEY_DATES = [
     {"date": "8月中旬", "event": "大厂秋招正式批大规模启动"},
-    {"date": "8月下旬-9月", "event": "网申高峰，每天投10-15家（电商4:新媒体3:嵌入式3）"},
-    {"date": "9月中旬-10月", "event": "笔试+面试密集期，提前刷面经"},
+    {"date": "8月下旬-9月", "event": "网申高峰，每天投10-15家"},
+    {"date": "9月中旬-10月", "event": "笔试+面试密集期"},
     {"date": "10月下旬", "event": "谈薪+签Offer高峰期"},
     {"date": "11-12月", "event": "补录捡漏+春招提前关注"},
 ]
